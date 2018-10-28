@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">mobilered</string>
+
+    <string name="pref_file">cross.mobilered.preference_file</string>
+    <string name="pref_login_status">cross.mobilered.preference_login_status</string>
+    <string name="pref_user_name">cross.mobilered.preference_user_name</string>
+
+
+</resources>

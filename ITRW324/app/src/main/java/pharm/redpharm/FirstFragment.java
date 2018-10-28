@@ -1,0 +1,55 @@
+package pharm.redpharm;
+
+import android.content.Intent;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+public class FirstFragment extends Fragment {
+    @Nullable
+    @Override
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_layout,container, false);
+        return rootView;
+    }
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        final ArrayList<RecyclerViewModel> pname = new ArrayList<RecyclerViewModel>();
+
+        pname.add(new RecyclerViewModel("History"));
+        pname.add(new RecyclerViewModel("Beta"));
+        pname.add(new RecyclerViewModel("Cupcake"));
+        pname.add(new RecyclerViewModel("Donut"));
+        pname.add(new RecyclerViewModel("Eclairs"));
+        pname.add(new RecyclerViewModel("Froyo"));
+        pname.add(new RecyclerViewModel("GingerBread"));
+        pname.add(new RecyclerViewModel("HoneyComb"));
+        pname.add(new RecyclerViewModel("IceCreamSandwich"));
+        pname.add(new RecyclerViewModel("JellyBean"));
+        pname.add(new RecyclerViewModel("KitKat"));
+        pname.add(new RecyclerViewModel("Lollipop"));
+        pname.add(new RecyclerViewModel("MarshMallow"));
+        pname.add(new RecyclerViewModel("Nougat"));
+
+        final RecyclerViewAdapter itemsAdapter = new RecyclerViewAdapter(FirstFragment.this.getActivity(), pname, null);
+        final RecyclerView clv = (RecyclerView) view.findViewById(R.id.clist);
+        clv.setLayoutManager(new LinearLayoutManager(FirstFragment.this.getActivity()));
+        clv.setHasFixedSize(true);
+        clv.setAdapter(itemsAdapter);
+
+
+
+    }
+
+}
